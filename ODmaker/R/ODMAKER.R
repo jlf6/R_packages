@@ -1,7 +1,7 @@
-library(dplyr)
-library(tidyr)
 #c("sbbm","ID","time")
 odmaker<-function(cars){
+library(dplyr)
+library(tidyr)
 #cars = x
 g<-group_by(cars,cars$ID)
 index<-group_indices(g,ID)

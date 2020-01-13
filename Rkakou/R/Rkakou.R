@@ -1116,11 +1116,7 @@ Bad_carID <- function(x,shebei,lukou){
   shebei$CROSS_ID = as.character(shebei$CROSS_ID)
 
   h1 = merge(h,shebei,all.x = T)
-  # s<-group_by(h1,CROSS_ID)
-  # s<-summarise(s,sum.x=sum(count1.x),sum.y=sum(wusun))
-  # s$b = s$sum.y/s$sum.x
   h1 = filter(h1,CROSS_ID != "Na")
-  #s$b = round(s$b,2)
 
   road <- lukou
   road = road[,c(1,3,4)]

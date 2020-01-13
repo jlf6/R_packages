@@ -1103,13 +1103,13 @@ Shiny_Heatmap <- function(x,y){
   }
   shinyApp(ui, server)
 }
-Bad_carID <- function(x){
+Bad_carID <- function(x,shebei,lukou){
   library(leaflet)
   library(dplyr)
   library(tidyr)
   h = x
   h$wusun = h$count1.x -h$count1.y
-  shebei <- read.xlsx("shebei.xlsx",1,encoding = "UTF-8")
+  shebei <- shebei
   names(shebei)[4]= 'sbbm'
   shebei = shebei[,c(4,5)]
   shebei$sbbm = as.character(shebei$sbbm)
@@ -1122,7 +1122,7 @@ Bad_carID <- function(x){
   h1 = filter(h1,CROSS_ID != "Na")
   #s$b = round(s$b,2)
 
-  road <- read.xlsx("路口数据.xlsx",1,encoding = "UTF-8")
+  road <- lukou
   road = road[,c(1,3,4)]
   names(road)= c('CROSS_ID','Lng','Lat')
 
